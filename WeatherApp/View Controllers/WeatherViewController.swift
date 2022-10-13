@@ -16,6 +16,8 @@ class WeatherViewController: UIViewController {
     var location : Location!
     var index = 0
     
+    //123
+    
     //MARK: ViewModel
     var viewModel: WeatherViewModel? {
         didSet {
