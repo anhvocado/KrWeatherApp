@@ -4,12 +4,14 @@ import UIKit
 import CoreLocation
 
 class PageViewController: UIViewController {
+    
     private let defaults = UserDefaults.standard
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     private let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
     private var pageControl = UIPageControl()
     private var locationManager = LocationManager()
     private var cachedWeatherViewControllers = NSCache<NSNumber, WeatherViewController>()
+    
     private var userLocationList = [Location](){
         didSet {
             self.pageControl.numberOfPages = userLocationList.count

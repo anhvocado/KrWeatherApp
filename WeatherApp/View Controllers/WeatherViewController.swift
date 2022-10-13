@@ -12,6 +12,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var hourlyCollectionView: UICollectionView!
     @IBOutlet weak var dailyTableView: UITableView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     var location : Location!
     var index = 0
     
@@ -93,6 +94,10 @@ class WeatherViewController: UIViewController {
         }
         self.viewModel = WeatherViewModel(location: location)
         self.viewModel?.retrieveWeatherData()
+    }
+    
+    private func configureScrollView() {
+        scrollView.delegate = self
     }
 }
 
